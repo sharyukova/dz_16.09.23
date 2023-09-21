@@ -41,7 +41,52 @@ namespace dz_16._09._23
             {
                 Console.WriteLine("ОШИБКА! Вы ввели НЕЦЕЛОЕ число");
             }
-           
-        }
-    }
-}
+           // 2.1 прочитать букву с экрана и вывести следующую за ней по алфавиту
+            Console.WriteLine("Введите букву: ");
+            string ch1 = Console.ReadLine();
+            if (ch1.Length == 1)
+            {
+                char ch = Convert.ToChar(ch1);
+                int ch2 = Convert.ToInt32(ch);
+                Console.WriteLine(ch2);
+                if (ch2 > 65 && ch2 < 91 || ch2 > 96 && ch2 < 123 || ch2 > 191 && ch2 < 256)
+                {
+                    char output = (char)(ch + 1);
+                    Console.WriteLine(Convert.ToChar(output));
+                }
+            }
+            else
+            {
+                Console.WriteLine("ОШИБКА!! Вы ввели не один символ.");
+            }
+            // 2.2 найти корни квадратного уравнения(коэффициента задаются пользователем с клавиатуры)
+            
+            Console.WriteLine("Ввести значение коэффициента a: ");
+            string stra = Console.ReadLine();
+            double aa = double.Parse(stra);
+            Console.WriteLine("Ввести значение коэффициента b: ");
+            string strb = Console.ReadLine();
+            double bb = double.Parse(strb);
+            Console.WriteLine("Ввести значение коэффициента c: ");
+            string strc = Console.ReadLine();
+            double cc = double.Parse(strc);
+            double D = (bb * bb) - (4 * aa * cc);
+            if (D < 0)
+            {
+                Console.WriteLine("корней нет");
+            }
+            
+            else if (D > 0)
+            {
+                double d = Math.Sqrt(D);
+                Console.WriteLine("Первый корень: " + ((-bb + d) / (2 * aa)));
+                Console.WriteLine("Второй корень: " + ((-bb - d) / (2 * aa)));
+            }
+            
+            else
+            {
+                Console.WriteLine("Корнем уравнения будет: " + ((-bb) / (2 * aa)));
+            }
+                    }
+                }
+            }
